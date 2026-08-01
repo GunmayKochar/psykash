@@ -1,0 +1,405 @@
+/* ============================================================
+   PSYKASH — Guide & Article Styles
+   ============================================================ */
+
+/* ── Article Container ── */
+.guide-container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--sp-6) var(--pad-mobile);
+}
+@media (min-width: 768px) {
+  .guide-container { padding: var(--sp-8) 0; }
+}
+
+/* ── Article Typography ── */
+.guide-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-5xl);
+  line-height: var(--leading-tight);
+  color: var(--charcoal);
+  margin-bottom: var(--sp-3);
+}
+
+.guide-subtitle {
+  font-size: var(--text-lg);
+  color: var(--color-text-sub);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--sp-4);
+}
+
+.guide-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-1);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--sage);
+  background-color: var(--sage-soft);
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  margin-bottom: var(--sp-6);
+}
+
+.guide-section {
+  margin-bottom: var(--sp-8);
+}
+
+.guide-section h2 {
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  color: var(--charcoal);
+  margin-bottom: var(--sp-3);
+  border-bottom: 1px solid var(--color-border-light);
+  padding-bottom: var(--sp-2);
+}
+
+.guide-section h3 {
+  font-size: var(--text-xl);
+  color: var(--charcoal);
+  margin-bottom: var(--sp-2);
+  margin-top: var(--sp-4);
+}
+
+.guide-section p {
+  font-size: var(--text-md);
+  line-height: var(--leading-relaxed);
+  color: var(--charcoal-light);
+  margin-bottom: var(--sp-3);
+}
+
+/* ── Checklist (Signs You Might Relate) ── */
+.guide-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--sp-4);
+}
+
+.guide-checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-2);
+  font-size: var(--text-md);
+  color: var(--charcoal-light);
+  background-color: var(--beige);
+  padding: var(--sp-3);
+  border-radius: var(--radius-md);
+}
+
+.guide-checklist li::before {
+  content: '✓';
+  color: var(--olive);
+  font-weight: bold;
+  font-size: var(--text-lg);
+  flex-shrink: 0;
+}
+
+.guide-checklist.lucide-list li::before {
+  content: none;
+}
+
+/* 🌿 Lucide Icons */
+.guide-icon {
+  width: 22px;
+  height: 22px;
+  stroke: var(--sage);
+  stroke-width: 2;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+  .guide-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .guide-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Utilities for icon alignment */
+.icon-heading {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+/* ── Practical Tips ── */
+.guide-tips {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.guide-tip {
+  background-color: var(--white);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-4);
+  box-shadow: var(--shadow-sm);
+}
+
+.guide-tip__header {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-2);
+}
+
+.guide-tip__header svg,
+.guide-tip__header .guide-icon {
+  width: 22px;
+  height: 22px;
+  max-width: 24px;
+  max-height: 24px;
+  flex-shrink: 0;
+}
+
+.guide-tip__number {
+  font-size: var(--text-lg);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  font-weight: bold;
+  color: var(--sage);
+}
+
+.guide-tip__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: bold;
+  color: var(--charcoal);
+}
+
+.guide-tip__action {
+  background-color: var(--sage-soft);
+  padding: var(--sp-3);
+  border-radius: var(--radius-sm);
+  margin-top: var(--sp-3);
+  border-left: 4px solid var(--sage);
+}
+
+.guide-tip__action-title {
+  font-weight: 600;
+  font-size: var(--text-sm);
+  color: var(--olive-dark);
+  margin-bottom: var(--sp-1);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+.guide-tip__action p {
+  margin: 0;
+  color: var(--charcoal);
+  font-size: var(--text-base);
+}
+
+/* ── Daily Challenge ── */
+.guide-challenge {
+  background: linear-gradient(135deg, var(--white) 0%, var(--beige) 100%);
+  border: 2px dashed var(--sage);
+  border-radius: var(--radius-xl);
+  padding: var(--sp-5);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.guide-challenge h3 {
+  color: var(--olive-dark);
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  margin-bottom: var(--sp-2);
+}
+
+.guide-challenge p {
+  font-size: var(--text-lg);
+  color: var(--charcoal);
+  font-weight: 500;
+  margin: 0;
+}
+
+/* ── Reflection Questions ── */
+.guide-reflection {
+  background-color: var(--white);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-xl);
+  padding: var(--sp-5);
+  box-shadow: var(--shadow-md);
+}
+
+.reflection-item {
+  margin-bottom: var(--sp-4);
+}
+.reflection-item:last-child {
+  margin-bottom: 0;
+}
+
+.reflection-item label {
+  display: block;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin-bottom: var(--sp-2);
+  font-size: var(--text-md);
+}
+
+.reflection-item textarea {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  padding: var(--sp-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--beige);
+  resize: vertical;
+  min-height: 80px;
+  transition: border-color var(--dur-fast);
+}
+
+.reflection-item textarea:focus {
+  outline: none;
+  border-color: var(--sage);
+  background-color: var(--white);
+}
+
+/* ── Helpful Reminder ── */
+.guide-reminder {
+  text-align: center;
+  padding: var(--sp-6) var(--sp-4);
+  background-color: var(--sage-soft);
+  border-radius: var(--radius-lg);
+  margin: var(--sp-8) 0;
+}
+
+.guide-reminder blockquote {
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  line-height: var(--leading-snug);
+  color: var(--olive-dark);
+  margin: 0;
+  font-style: italic;
+}
+
+/* ── Disclaimer Box ── */
+.guide-disclaimer {
+  background-color: var(--beige-dark);
+  padding: var(--sp-4);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  color: var(--charcoal-muted);
+}
+.guide-disclaimer strong {
+  color: var(--charcoal-light);
+}
+
+/* ── FAQ Questions ── */
+.guide-section > div:not(.guide-challenge) > h3.icon-heading {
+  font-weight: bold;
+  font-size: var(--text-xl) !important;
+}
+
+
+/* ============================================================
+   MOBILE OVERRIDES (Read More Pages)
+   ============================================================ */
+@media (max-width: 768px) {
+  /* 1. Container padding to prevent cutting off */
+  .guide-container {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    padding-top: var(--sp-6) !important;
+    padding-bottom: var(--sp-8) !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    overflow-x: hidden !important;
+  }
+  
+  /* 2. Resize Main Title & Subtitle */
+  .guide-title {
+    font-size: var(--text-3xl) !important;
+    line-height: var(--leading-tight) !important;
+    padding: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .guide-subtitle {
+    font-size: var(--text-base) !important;
+    line-height: var(--leading-normal) !important;
+    padding: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  
+  /* Resize Section Headings */
+  .guide-section h2, 
+  .guide-section h2.icon-heading {
+    font-size: var(--text-2xl) !important;
+    line-height: var(--leading-tight) !important;
+    margin-bottom: var(--sp-3) !important;
+    padding: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .guide-section h3, 
+  .guide-section > div:not(.guide-challenge) > h3.icon-heading {
+    font-size: var(--text-lg) !important;
+    line-height: var(--leading-snug) !important;
+    padding: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  
+  /* 3. Paragraph spacing and readability */
+  .guide-section p {
+    font-size: 1.05rem !important;
+    line-height: 1.7 !important;
+    margin-bottom: var(--sp-4) !important;
+    padding: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  
+  /* 4. Align lists and icons */
+  .guide-section ul, 
+  .guide-section ol {
+    padding-left: 20px !important;
+    padding-right: 0 !important;
+    margin-bottom: var(--sp-4) !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .guide-section li {
+    font-size: 1.05rem !important;
+    line-height: 1.7 !important;
+    margin-bottom: 14px !important;
+  }
+  
+  /* Fix content blocks (challenges, disclaimers, etc) */
+  .guide-challenge,
+  .guide-disclaimer,
+  .guide-reminder {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: var(--sp-4) !important;
+  }
+
+  .guide-challenge h3 {
+    font-size: var(--text-xl) !important;
+    margin-bottom: var(--sp-2) !important;
+  }
+  .guide-challenge p {
+    font-size: var(--text-base) !important;
+    margin-bottom: 0 !important;
+  }
+  
+  .guide-reminder blockquote {
+    font-size: var(--text-2xl) !important;
+    line-height: var(--leading-tight) !important;
+  }
+}

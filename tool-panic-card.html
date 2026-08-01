@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A digital safety net providing immediate, step-by-step reassurance when you are experiencing severe panic." />
+  <title>Panic Attack Coping Card — Psykash</title>
+  
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="resources.css" />
+  <link rel="stylesheet" href="guide.css" />
+  <link rel="icon" href="assets/images/logo.png" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAVBAR
+       ═══════════════════════════════════════════ -->
+  <div id="nav-container"></div>
+  <script src="navbar.js"></script>
+
+  <!-- ═══════════════════════════════════════════
+       ARTICLE CONTENT
+       ═══════════════════════════════════════════ -->
+  <main class="guide-container">
+
+    <!-- 1. HERO SECTION -->
+    <header class="guide-section" style="text-align: center; margin-bottom: var(--sp-6);">
+      <div class="guide-meta">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        1 min read
+      </div>
+      <h1 class="guide-title">Panic Attack Coping Card</h1>
+      <p class="guide-subtitle">A digital safety net providing immediate, step-by-step reassurance when you are experiencing severe panic.</p>
+    </header>
+
+    <!-- 2. WHY DOES THIS HAPPEN? -->
+    <section class="guide-section">
+      <h2 class="icon-heading"><i data-lucide="circle-help" class="guide-icon"></i>Frequently Asked Questions</h2>
+      <div style="margin-bottom: var(--sp-3);">
+        <h3 class="icon-heading" style="font-size: var(--text-md); margin-bottom: var(--sp-1);"><i data-lucide="circle-help" class="guide-icon"></i>What if reading this does not stop the panic?</h3>
+        <p style="color: var(--charcoal-light);">The goal of the card is not to instantly stop the panic; it is to stop you from adding secondary fear to it. The panic will burn out on its own.</p>
+      </div>
+      <div style="margin-bottom: var(--sp-3);">
+        <h3 class="icon-heading" style="font-size: var(--text-md); margin-bottom: var(--sp-1);"><i data-lucide="circle-help" class="guide-icon"></i>Should I keep a physical copy of this?</h3>
+        <p style="color: var(--charcoal-light);">Yes. Taking a screenshot of this page or writing these steps down on a card in your wallet ensures you have it even without the internet.</p>
+      </div>
+      <div style="margin-bottom: var(--sp-3);">
+        <h3 class="icon-heading" style="font-size: var(--text-md); margin-bottom: var(--sp-1);"><i data-lucide="circle-help" class="guide-icon"></i>Is it safe to drive during a panic attack?</h3>
+        <p style="color: var(--charcoal-light);">No. If you feel a panic attack starting while driving, pull over safely, read this card, and wait 15 minutes for the adrenaline to subside.</p>
+      </div>
+    </section>
+
+    <hr style="border: 0; border-top: 1px solid var(--color-border-light); margin: var(--sp-8) 0;" />
+
+    <!-- 9. CONTINUE READING -->
+    <section class="guide-section" style="text-align: center;">
+      <h2 style="justify-content: center;">Continue Reading</h2>
+      <div style="display: flex; gap: var(--sp-4); justify-content: center; flex-wrap: wrap; margin-top: var(--sp-4);">
+        <a href="tool-grounding.html" class="res-card" style="flex: 1; min-width: 200px; text-decoration: none;">
+          <h3 class="res-card__title icon-heading"><i data-lucide="eye" class="guide-icon"></i>5-4-3-2-1 Grounding</h3>
+          <p class="res-card__desc">Anchor yourself in the present.</p>
+        </a>
+        <a href="guide-anxiety.html" class="res-card" style="flex: 1; min-width: 200px; text-decoration: none;">
+          <h3 class="res-card__title icon-heading"><i data-lucide="brain" class="guide-icon"></i>Managing Anxiety</h3>
+          <p class="res-card__desc">Long-term strategies for anxiety.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- 10. BOOK APPOINTMENT CTA -->
+    <section class="guide-section" style="margin-top: var(--sp-8);">
+      <div style="text-align: center; background-color: var(--beige); padding: var(--sp-8) var(--sp-4); border-radius: var(--radius-xl);">
+        <h2 class="icon-heading" style="border: none; margin-bottom: var(--sp-2); justify-content: center;"><i data-lucide="heart-handshake" class="guide-icon"></i>Ready to take the next step?</h2>
+        <p style="color: var(--charcoal-light); margin-bottom: var(--sp-4); max-width: 400px; margin-left: auto; margin-right: auto;">Our licensed therapists are here to provide the support and tools you need to find peace.</p>
+        <a href="index.html#contact" class="btn btn--primary">Book an Appointment</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════ -->
+    <footer class="footer">
+    <div class="container" style="text-align: center; padding: var(--sp-8) 0; display: flex; flex-direction: column; align-items: center; gap: var(--sp-4);">
+      <img src="assets/images/logo.png" alt="Psykash Online Therapy Logo" style="height: 40px; width: auto; opacity: 0.8;" />
+      <p style="color: var(--color-text-soft); font-size: 0.875rem; margin: 0;">&copy; 2026 Psykash. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Psykash — Frequently asked questions about mental wellness, therapy, and self-help." />
+  <title>FAQ — Psykash</title>
+  
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="resources.css" />
+  <link rel="icon" href="assets/images/logo.png" />
+
+  <style>
+      #faq h3.icon-heading {
+        font-weight: 600;
+        color: var(--charcoal-dark, var(--color-heading));
+        display: flex;
+        align-items: center;
+        gap: var(--sp-2);
+      }
+      @media (max-width: 768px) {
+        #faqHeroImage {
+          transition: opacity 300ms ease, transform 300ms ease, max-height 300ms ease, padding 300ms ease, margin 300ms ease;
+          max-height: 500px;
+          opacity: 1;
+          transform: scale(1);
+          overflow: hidden;
+        }
+        #faqHeroImage.hidden-search {
+          opacity: 0;
+          transform: scale(0.9);
+          max-height: 0;
+          padding: 0 !important;
+          margin: 0 !important;
+          pointer-events: none;
+        }
+      }
+    </style>
+  <style>
+    /* Mobile-only override to fix excessive top spacing */
+    @media (max-width: 768px) {
+      main > section:first-of-type {
+        padding-top: 24px !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAVBAR
+       ═══════════════════════════════════════════ -->
+  <div id="nav-container"></div>
+  <script src="navbar.js"></script>
+
+  <!-- ═══════════════════════════════════════════
+       FAQ HERO
+       ═══════════════════════════════════════════ -->
+  <section class="section section--beige" style="padding-top: calc(var(--nav-height) + var(--sp-10)); padding-bottom: var(--sp-6);">
+      <div class="container split-screen">
+        
+        <!-- Left Column: Content and Search -->
+        <div class="split-screen__content fade-in" style="align-self: flex-start;">
+          <h1 class="section-title" style="text-align: left; margin-bottom: var(--sp-4);">Frequently Asked Questions</h1>
+          <p style="text-align: left; margin-bottom: var(--sp-2);">Common questions from across all our self-help guides and quick toolkit techniques.</p>
+          
+          <div class="search-container" style="margin: var(--sp-6) 0 0 0; max-width: 100%;">
+            <div class="search-input-wrapper">
+              <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              <input type="text" id="faqSearchInput" class="search-input" placeholder="Search for a question..." />
+            </div>
+            <div class="search-suggestions" style="justify-content: flex-start;">
+              <span class="search-pill faq-pill">Anxiety</span>
+              <span class="search-pill faq-pill">Sleep</span>
+              <span class="search-pill faq-pill">Burnout</span>
+              <span class="search-pill faq-pill">Phone</span>
+              <span class="search-pill faq-pill">Relationships</span>
+              <span class="search-pill faq-pill">Confidence</span>
+              <span class="search-pill faq-pill">Overthinking</span>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Right Column: Logo -->
+        <div id="faqHeroImage" class="split-screen__image fade-in" style="--delay: 200ms; display: flex; justify-content: center; align-items: center; padding: var(--sp-4); align-self: flex-start;">
+          <div class="logo-breeze-wrapper">
+            <div class="hero-logo-breathe-container">
+              <img src="assets/images/logo.png" alt="Psykash Online Therapy Logo" class="hero-logo-breathe" style="width: 100%; max-width: 320px; height: auto;" />
+            </div>
+            
+            <div class="breeze-leaf breeze-leaf-1"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M21,3 C21,3 13,2 8,7 C3,12 2,21 2,21 C2,21 11,22 16,17 C21,12 21,3 21,3 Z" /></svg></div>
+            <div class="breeze-leaf breeze-leaf-2"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M21,3 C21,3 13,2 8,7 C3,12 2,21 2,21 C2,21 11,22 16,17 C21,12 21,3 21,3 Z" /></svg></div>
+            <div class="breeze-leaf breeze-leaf-3"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M21,3 C21,3 13,2 8,7 C3,12 2,21 2,21 C2,21 11,22 16,17 C21,12 21,3 21,3 Z" /></svg></div>
+            <div class="breeze-leaf breeze-leaf-4"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M21,3 C21,3 13,2 8,7 C3,12 2,21 2,21 C2,21 11,22 16,17 C21,12 21,3 21,3 Z" /></svg></div>
+            <div class="breeze-leaf breeze-leaf-5"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M21,3 C21,3 13,2 8,7 C3,12 2,21 2,21 C2,21 11,22 16,17 C21,12 21,3 21,3 Z" /></svg></div>
+            <div class="breeze-leaf breeze-leaf-6"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M21,3 C21,3 13,2 8,7 C3,12 2,21 2,21 C2,21 11,22 16,17 C21,12 21,3 21,3 Z" /></svg></div>
+            <div class="breeze-leaf breeze-leaf-7"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M21,3 C21,3 13,2 8,7 C3,12 2,21 2,21 C2,21 11,22 16,17 C21,12 21,3 21,3 Z" /></svg></div>
+            <div class="breeze-leaf breeze-leaf-8"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M21,3 C21,3 13,2 8,7 C3,12 2,21 2,21 C2,21 11,22 16,17 C21,12 21,3 21,3 Z" /></svg></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!-- ═══════════════════════════════════════════
+       ALL FAQS
+       ═══════════════════════════════════════════ -->
+  <section class="section" id="faq" style="padding-top: var(--sp-4);">
+    <div class="container">
+      <div style="max-width: 820px;">
+      
+      <div style="margin-bottom: var(--sp-3);">
+        <h3 class="icon-heading" style="font-size: var(--text-md); margin-bottom: var(--sp-1);"><i data-lucide="circle-help" class="guide-icon"></i>How many times should I repeat the cycle?</h3>
+        <p style="color: var(--charcoal-light);">Aim for at least 4 cycles to start feeling the physiological effects. You can continue for up to 5-10 minutes if needed.</p>
+      </div>
+      <div style="margin-bottom: var(--sp-3);">
+        <h3 class="icon-heading" style="font-size: var(--text-md); margin-bottom: var(--sp-1);"><i data-lucide="circle-help" class="guide-icon"></i>Is it dangerous to hold my breath?</h3>
+        <p style="color: var(--charcoal-light);">A gentle 4-second hold is completely safe for most people and is actually the mechanism that triggers the calming vagal response. However, if you feel dizzy, return to normal breathing immediately.</p>
+      </div>
+      <div style="margin-bottom: var(--sp-3);">
+        <h3 class="icon-heading" style="font-size: var(--text-md); margin-bottom: var(--sp-1);"><i data-lucide="circle-help" class="guide-icon"></i>Can I do this lying down?</h3>
+        <p style="color: var(--charcoal-light);">Yes! Box breathing is highly effective when lying in bed trying to fall asleep, as it mimics the respiratory rate of a sleeping body.</p>
+      </div>
+      <div style="margin-bottom: var(--sp-3);">
+        <h3 class="icon-heading" style="font-size: var(--text-md); margin-bottom: var(--sp-1);"><i data-lucide="circle-help" class="guide-icon"></i>What if I can't find 5 things to see?</h3>
+        <p style="color: var(--charcoal-light);">You can count the same object's different properties—like five different colors on a single poster, or five different shadows on the floor. It's about the focus, not the objects themselves.</p>
+      </div>
+      <div style="margin-bottom: var(--sp-3);">
+        <h3 class="icon-heading" style="font-size: var(--text-md); margin-bottom: var(--sp-1);"><i data-lucide="circle-help" class="guide-icon"></i>Does this cure anxiety?</h3>
+        <p style="color: var(--charcoal-light);">No, grounding is a coping mechanism for acute distress. It lowers the immediate intensity of a panic attack so you can function and employ longer-term emotional regulation strategies.</p>
+      </div>
+      <div style="margin-bottom: var(--sp-3);">
+        <h3 class="icon-heading" style="font-size: var(--text-md); margin-bottom: var(--sp-1);"><i data-lucide="circle-help" class="guide-icon"></i>Can I do this in a crowded room?</h3>
+        <p style="color: var(--charcoal-light);">Absolutely. It is entirely discreet. You can look around, touch your own clothing, listen to the ambient noise, and take a sip of water without anyone knowing you are doing a grounding exercise.</p>
+      </div>
+      <div style="margin-bottom: var(--sp-3);">
+        <h3 class="icon-heading" style="font-size: var(--text-md); margin-bottom: var(--sp-1);"><i data-lucide="circle-help" class="guide-icon"></i>What if I need my phone for work emergencies in the bedroom?</h3>
+        <p style="color: var(--charcoal-light);">Leave the phone plugged in just outside the bedroom door with the ringer on loud for calls only. You will hear an emergency call, but you won't be able to scroll in bed.</p>
+      </div>
+      <div style="margin-bottom: var(--sp-3);">
+        <h3 class="icon-heading" style="font-size: var(--text-md); margin-bottom: var(--sp-1);"><i data-lucide="circle-help" class="guide-icon"></i>Can I reinstall the app after the 7 days?</h3>
+        <p style="color: var(--charcoal-light);">Yes, but you will likely find you no longer want to. If you do, reinstall it but keep it off the home screen.</p>
+      </div>
+      <div style="margin-bottom: var(--sp-3);">
+        <h3 class="icon-heading" style="font-size: var(--text-md); margin-bottom: var(--sp-1);"><i data-lucide="circle-help" class="guide-icon"></i>What do I do with the extra time?</h3>
+        <p style="color: var(--charcoal-light);">At first, you will feel bored and restless. This is normal withdrawal. Let yourself be bored. Read, walk, or talk to someone.</p>
+      </div>
+      <div style="margin-bottom: var(--sp-3);">
+        <h3 class="icon-heading" style="font-size: var(--text-md); margin-bottom: var(--sp-1);"><i data-lucide="circle-help" class="guide-icon"></i>Will a vacation cure my burnout?</h3>
+        <p style="color: var(--charcoal-light);">A vacation offers temporary relief, but if you return to the exact same boundaries and workload, the burnout will return within weeks. Recovery requires systemic changes to your routine.</p>
+      </div>
+      <div style="margin-bottom: var(--sp-3);">
+        <h3 class="icon-heading" style="font-size: var(--text-md); margin-bottom: var(--sp-1);"><i data-lucide="circle-help" class="guide-icon"></i>How long does it take to recover?</h3>
+        <p style="color: var(--charcoal-light);">Recovery timeline varies depending on severity, but severe burnout can take months or even a year to fully resolve. Patience and radical rest are essential.</p>
+      </div>
+      <div style="margin-bottom: var(--sp-3);">
+        <h3 class="icon-heading" style="font-size: var(--text-md); margin-bottom: var(--sp-1);"><i data-lucide="circle-help" class="guide-icon"></i>What if I can't afford to quit my job?</h3>
+        <p style="color: var(--charcoal-light);">Quitting is not the only option. Focus on things you can control: strictly limiting overtime, taking full lunch breaks away from your desk, and emotionally detaching your self-worth from your productivity.</p>
+      </div>
+      <div style="margin-bottom: var(--sp-3);">
+        <h3 class="icon-heading" style="font-size: var(--text-md); margin-bottom: var(--sp-1);"><i data-lucide="circle-help" class="guide-icon"></i>Is all comparison bad?</h3>
+        <p style="color: var(--charcoal-light);">No. Upward comparison can be motivating if it inspires you to improve. It only becomes toxic when it generates feelings of inadequacy and shame.</p>
+      </div>
+      <div style="margin-bottom: var(--sp-3);">
+        <h3 class="icon-heading" style="font-size: var(--text-md); margin-bottom: var(--sp-1);"><i data-lucide="circle-help" class="guide-icon"></i>Why do I compare myself to people I do not even like?</h3>
+        <p style="color: var(--charcoal-light);">Because your brain is assessing social hierarchy, not personal affection. It is a biological reflex looking for status threats, even among strangers.</p>
+      </div>
+      <div style="margin-bottom: var(--sp-3);">
+        <h3 class="icon-heading" style="font-size: var(--text-md); margin-bottom: var(--sp-1);"><i data-lucide="circle-help" class="guide-icon"></i>How do I handle family members who compare me to others?</h3>
+        <p style="color: var(--charcoal-light);">Set a firm boundary. You can calmly say, "I am focusing on my own path right now, and I would appreciate it if we didn't compare my progress to others."</p>
+      </div>
+      <div style="margin-bottom: var(--sp-3);">
+        <h3 class="icon-heading" style="font-size: var(--text-md); margin-bottom: var(--sp-1);"><i data-lucide="circle-help" class="guide-icon"></i>Is it wrong to want to be perfect?</h3>
+        <p style="color: var(--charcoal-light);">Striving for excellence is healthy. Perfectionism, however, is a defense mechanism rooted in the fear of judgment. True excellence requires making mistakes; perfectionism forbids them.</p>
+      </div>
+      <div style="margin-bottom: var(--sp-3);">
+        <h3 class="icon-heading" style="font-size: var(--text-md); margin-bottom: var(--sp-1);"><i data-lucide="circle-help" class="guide-icon"></i>How do I stop caring what people think if I fail?</h3>
+        <p style="color: var(--charcoal-light);">Recognise that most people are far too consumed by their own fears and insecurities to spend much time judging yours. When they do judge, it is usually a projection of their own limitations.</p>
+      </div>
+      <div style="margin-bottom: var(--sp-3);">
+        <h3 class="icon-heading" style="font-size: var(--text-md); margin-bottom: var(--sp-1);"><i data-lucide="circle-help" class="guide-icon"></i>What if the failure really was a big deal?</h3>
+        <p style="color: var(--charcoal-light);">Acknowledge the weight of it, take accountability where necessary, and grieve the loss. But remember that no single event, no matter how catastrophic, defines your entire worth as a human being.</p>
+      </div>
+      <div style="margin-bottom: var(--sp-3);">
+        <h3 class="icon-heading" style="font-size: var(--text-md); margin-bottom: var(--sp-1);"><i data-lucide="circle-help" class="guide-icon"></i>How many hours of screen time is healthy?</h3>
+        <p style="color: var(--charcoal-light);">There is no magic number. It depends entirely on what you are doing (creating vs consuming) and whether it interferes with your sleep, relationships, or work.</p>
+      </div>
+      <div style="margin-bottom: var(--sp-3);">
+        <h3 class="icon-heading" style="font-size: var(--text-md); margin-bottom: var(--sp-1);"><i data-lucide="circle-help" class="guide-icon"></i>Should I delete all my social media apps?</h3>
+        <p style="color: var(--charcoal-light);">Only if you want to. For most people, simply moving the apps off the home screen or setting app timers is enough friction to break the habit without totally disconnecting.</p>
+      </div>
+      <div style="margin-bottom: var(--sp-3);">
+        <h3 class="icon-heading" style="font-size: var(--text-md); margin-bottom: var(--sp-1);"><i data-lucide="circle-help" class="guide-icon"></i>Why do I scroll when I am stressed?</h3>
+        <p style="color: var(--charcoal-light);">Scrolling is a highly effective, low-effort numbing mechanism. It temporarily distracts you from the stressful feeling, though it does not resolve the underlying cause.</p>
+      </div>
+      <div style="margin-bottom: var(--sp-3);">
+        <h3 class="icon-heading" style="font-size: var(--text-md); margin-bottom: var(--sp-1);"><i data-lucide="circle-help" class="guide-icon"></i>Is it normal to lose motivation halfway through a project?</h3>
+        <p style="color: var(--charcoal-light);">Yes. This is often called the 'messy middle'. The novelty has worn off, but the reward of completion is still far away. This is when systems and discipline must take over from excitement.</p>
+      </div>
+      <div style="margin-bottom: var(--sp-3);">
+        <h3 class="icon-heading" style="font-size: var(--text-md); margin-bottom: var(--sp-1);"><i data-lucide="circle-help" class="guide-icon"></i>How do I get motivated to exercise?</h3>
+        <p style="color: var(--charcoal-light);">Stop relying on feeling motivated. Pack your gym bag the night before, put it by the door, and focus only on the action of putting on your shoes. Make the barrier to entry as low as possible.</p>
+      </div>
+      <div style="margin-bottom: var(--sp-3);">
+        <h3 class="icon-heading" style="font-size: var(--text-md); margin-bottom: var(--sp-1);"><i data-lucide="circle-help" class="guide-icon"></i>Why do I self-sabotage when things are going well?</h3>
+        <p style="color: var(--charcoal-light);">Success can sometimes feel unfamiliar or create pressure to maintain that new standard. This fear of the unknown can cause us to subconsciously retreat to our familiar comfort zone.</p>
+      </div>
+      <div style="margin-bottom: var(--sp-3);">
+        <h3 class="icon-heading" style="font-size: var(--text-md); margin-bottom: var(--sp-1);"><i data-lucide="circle-help" class="guide-icon"></i>Is overthinking a mental illness?</h3>
+        <p style="color: var(--charcoal-light);">No, overthinking itself is not a mental illness. It is a very common thought pattern. However, chronic overthinking can be a symptom of anxiety disorders.</p>
+      </div>
+      <div style="margin-bottom: var(--sp-3);">
+        <h3 class="icon-heading" style="font-size: var(--text-md); margin-bottom: var(--sp-1);"><i data-lucide="circle-help" class="guide-icon"></i>How do I stop overthinking at night?</h3>
+        <p style="color: var(--charcoal-light);">Practicing a "brain dump" by writing down all your worries before getting into bed is one of the most effective ways to signal to your brain that it is safe to rest.</p>
+      </div>
+      <div style="margin-bottom: var(--sp-3);">
+        <h3 class="icon-heading" style="font-size: var(--text-md); margin-bottom: var(--sp-1);"><i data-lucide="circle-help" class="guide-icon"></i>Can overthinking cause physical symptoms?</h3>
+        <p style="color: var(--charcoal-light);">Yes. The stress caused by overthinking triggers cortisol and adrenaline release, which can cause muscle tension, headaches, and fatigue.</p>
+      </div>
+      <div style="margin-bottom: var(--sp-3);">
+        <h3 class="icon-heading" style="font-size: var(--text-md); margin-bottom: var(--sp-1);"><i data-lucide="circle-help" class="guide-icon"></i>Is it really an addiction?</h3>
+        <p style="color: var(--charcoal-light);">While 'addiction' is a strong word, problematic smartphone use shares many behavioral pathways with traditional addictions, including withdrawal and tolerance.</p>
+      </div>
+      <div style="margin-bottom: var(--sp-3);">
+        <h3 class="icon-heading" style="font-size: var(--text-md); margin-bottom: var(--sp-1);"><i data-lucide="circle-help" class="guide-icon"></i>Do I have to quit social media entirely?</h3>
+        <p style="color: var(--charcoal-light);">Not necessarily. Digital wellbeing is about intentionality. The goal is to use your phone as a tool, rather than letting it use you.</p>
+      </div>
+      <div style="margin-bottom: var(--sp-3);">
+        <h3 class="icon-heading" style="font-size: var(--text-md); margin-bottom: var(--sp-1);"><i data-lucide="circle-help" class="guide-icon"></i>Will people dislike me if I start saying no?</h3>
+        <p style="color: var(--charcoal-light);">Some people who benefited from your lack of boundaries may push back initially. However, healthy people will respect your limits. Boundaries act as a filter for who genuinely cares about you.</p>
+      </div>
+      <div style="margin-bottom: var(--sp-3);">
+        <h3 class="icon-heading" style="font-size: var(--text-md); margin-bottom: var(--sp-1);"><i data-lucide="circle-help" class="guide-icon"></i>Is it selfish to put my needs first?</h3>
+        <p style="color: var(--charcoal-light);">No. You cannot pour from an empty cup. Protecting your energy ensures that when you do choose to help others, you are doing it from a place of genuine willingness, not resentment.</p>
+      </div>
+      <div style="margin-bottom: var(--sp-3);">
+        <h3 class="icon-heading" style="font-size: var(--text-md); margin-bottom: var(--sp-1);"><i data-lucide="circle-help" class="guide-icon"></i>How do I say no to my boss?</h3>
+        <p style="color: var(--charcoal-light);">Focus on priorities rather than refusal. Try: "I can absolutely take on this new project. To make sure it gets done well, which of my current tasks should I deprioritize to make room for it?"</p>
+      </div>
+      <div style="margin-bottom: var(--sp-3);">
+        <h3 class="icon-heading" style="font-size: var(--text-md); margin-bottom: var(--sp-1);"><i data-lucide="circle-help" class="guide-icon"></i>Is it better to just quit completely?</h3>
+        <p style="color: var(--charcoal-light);">For some, yes. But for others, social media is a vital tool for staying in touch. You do not have to quit; you just have to curate it ruthlessly.</p>
+      </div>
+      <div style="margin-bottom: var(--sp-3);">
+        <h3 class="icon-heading" style="font-size: var(--text-md); margin-bottom: var(--sp-1);"><i data-lucide="circle-help" class="guide-icon"></i>Why do I care about likes from strangers?</h3>
+        <p style="color: var(--charcoal-light);">Likes trigger dopamine, mimicking social approval. It is a biological hack that makes you care about the opinions of people you don't even know.</p>
+      </div>
+      <div style="margin-bottom: var(--sp-3);">
+        <h3 class="icon-heading" style="font-size: var(--text-md); margin-bottom: var(--sp-1);"><i data-lucide="circle-help" class="guide-icon"></i>How do I explain to a friend that I muted them?</h3>
+        <p style="color: var(--charcoal-light);">You rarely have to explain, as they are not notified. If asked, say: "I am taking a step back from looking at feeds right now for my mental health, but I still want to talk to you directly!"</p>
+      </div>
+      <div style="margin-bottom: var(--sp-3);">
+        <h3 class="icon-heading" style="font-size: var(--text-md); margin-bottom: var(--sp-1);"><i data-lucide="circle-help" class="guide-icon"></i>Why do panic attacks happen out of nowhere?</h3>
+        <p style="color: var(--charcoal-light);">They are often a delayed release of accumulated stress. Your nervous system is overflowing, and a minor trigger (even a change in temperature or heart rate) can tip the bucket.</p>
+      </div>
+      <div style="margin-bottom: var(--sp-3);">
+        <h3 class="icon-heading" style="font-size: var(--text-md); margin-bottom: var(--sp-1);"><i data-lucide="circle-help" class="guide-icon"></i>How do I know it is a panic attack and not a heart attack?</h3>
+        <p style="color: var(--charcoal-light);">While the symptoms overlap, panic attacks peak within 10 minutes and then subside, and the pain is usually sharp and localized. However, if you are ever unsure, always seek medical attention first.</p>
+      </div>
+      <div style="margin-bottom: var(--sp-3);">
+        <h3 class="icon-heading" style="font-size: var(--text-md); margin-bottom: var(--sp-1);"><i data-lucide="circle-help" class="guide-icon"></i>Will I be exhausted afterwards?</h3>
+        <p style="color: var(--charcoal-light);">Yes, a "panic hangover" is very common. Your body just ran a chemical marathon. Drink water, rest, and be gentle with yourself for the rest of the day.</p>
+      </div>
+      <div style="margin-bottom: var(--sp-3);">
+        <h3 class="icon-heading" style="font-size: var(--text-md); margin-bottom: var(--sp-1);"><i data-lucide="circle-help" class="guide-icon"></i>What if an area of my body is injured?</h3>
+        <p style="color: var(--charcoal-light);">Skip any muscle groups that are injured, painful, or recovering from surgery. Focus on the surrounding healthy muscles instead.</p>
+      </div>
+      <div style="margin-bottom: var(--sp-3);">
+        <h3 class="icon-heading" style="font-size: var(--text-md); margin-bottom: var(--sp-1);"><i data-lucide="circle-help" class="guide-icon"></i>Is it normal to feel a tingling sensation?</h3>
+        <p style="color: var(--charcoal-light);">Yes, a warm, heavy, or slightly tingling sensation is completely normal and is a sign that the muscles are deeply relaxing and blood flow is increasing.</p>
+      </div>
+      <div style="margin-bottom: var(--sp-3);">
+        <h3 class="icon-heading" style="font-size: var(--text-md); margin-bottom: var(--sp-1);"><i data-lucide="circle-help" class="guide-icon"></i>Can I listen to music while doing this?</h3>
+        <p style="color: var(--charcoal-light);">Yes, soft, instrumental music without a driving beat can enhance the relaxation effect.</p>
+      </div>
+      <div style="margin-bottom: var(--sp-3);">
+        <h3 class="icon-heading" style="font-size: var(--text-md); margin-bottom: var(--sp-1);"><i data-lucide="circle-help" class="guide-icon"></i>Does this take a long time to do?</h3>
+        <p style="color: var(--charcoal-light);">No, the entire S.T.O.P. cycle can be completed in as little as 10 to 15 seconds. It is a micro-intervention.</p>
+      </div>
+      <div style="margin-bottom: var(--sp-3);">
+        <h3 class="icon-heading" style="font-size: var(--text-md); margin-bottom: var(--sp-1);"><i data-lucide="circle-help" class="guide-icon"></i>What if I am too overwhelmed to observe my thoughts?</h3>
+        <p style="color: var(--charcoal-light);">If internal observation is too overwhelming, focus entirely on external observation. Notice the temperature of the room or the color of the wall in front of you.</p>
+      </div>
+      <div style="margin-bottom: var(--sp-3);">
+        <h3 class="icon-heading" style="font-size: var(--text-md); margin-bottom: var(--sp-1);"><i data-lucide="circle-help" class="guide-icon"></i>Can children use this technique?</h3>
+        <p style="color: var(--charcoal-light);">Yes, it is highly effective for children and is often taught in schools to help with emotional regulation and impulse control.</p>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════ -->
+    <footer class="footer">
+    <div class="container" style="text-align: center; padding: var(--sp-8) 0; display: flex; flex-direction: column; align-items: center; gap: var(--sp-4);">
+      <img src="assets/images/logo.png" alt="Psykash Online Therapy Logo" style="height: 40px; width: auto; opacity: 0.8;" />
+      <p style="color: var(--color-text-soft); font-size: 0.875rem; margin: 0;">&copy; 2026 Psykash. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+    
+    // Add mobile toggle for dropdown
+    const dropdown = document.getElementById('selfHelpDropdown');
+    if (dropdown) {
+      dropdown.addEventListener('click', (e) => {
+        if (window.innerWidth < 900) {
+          e.preventDefault();
+          dropdown.classList.toggle('is-open');
+        }
+      });
+    }
+
+    
+    // FAQ Search Logic
+    const searchInput = document.getElementById('faqSearchInput');
+    const faqPills = document.querySelectorAll('.faq-pill');
+
+    if (searchInput) {
+      const performSearch = (query) => {
+        query = query.toLowerCase();
+        const faqItems = document.querySelectorAll('#faq .container > div');
+        
+        let hasResults = false;
+        
+        // Mobile logo hide logic
+        const faqHeroImg = document.getElementById('faqHeroImage');
+        if (faqHeroImg && window.innerWidth <= 768) {
+          if (query.trim().length > 0) {
+            faqHeroImg.classList.add('hidden-search');
+          } else {
+            faqHeroImg.classList.remove('hidden-search');
+          }
+        }
+
+        faqItems.forEach(item => {
+          if (item.id === 'noResultsMsg') return;
+          
+          const text = item.textContent.toLowerCase();
+          if (text.includes(query)) {
+            item.style.display = 'block';
+            hasResults = true;
+          } else {
+            item.style.display = 'none';
+          }
+        });
+        
+        let noResultsMsg = document.getElementById('noResultsMsg');
+        if (!hasResults && query.trim() !== '') {
+          if (!noResultsMsg) {
+            noResultsMsg = document.createElement('div');
+            noResultsMsg.id = 'noResultsMsg';
+            noResultsMsg.style.textAlign = 'center';
+            noResultsMsg.style.padding = 'var(--sp-6)';
+            noResultsMsg.style.color = 'var(--charcoal-light)';
+            noResultsMsg.innerHTML = `
+              <p style="margin-bottom: var(--sp-4);">No matching questions found.</p>
+              <a href="index.html#contact" class="btn btn--primary">Book an Appointment</a>
+            `;
+            document.querySelector('#faq .container').appendChild(noResultsMsg);
+          }
+          noResultsMsg.style.display = 'block';
+        } else if (noResultsMsg) {
+          noResultsMsg.style.display = 'none';
+        }
+      };
+
+      searchInput.addEventListener('input', (e) => performSearch(e.target.value));
+
+      // Make pills clickable
+      faqPills.forEach(pill => {
+        pill.style.cursor = 'pointer';
+        pill.addEventListener('click', () => {
+          const keyword = pill.textContent;
+          searchInput.value = keyword;
+          performSearch(keyword);
+        });
+      });
+    }
+  </script>
+</body>
+
+</html>

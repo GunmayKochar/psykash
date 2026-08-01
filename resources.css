@@ -1,0 +1,376 @@
+/* ============================================================
+   PSYKASH — Resources Page Styles
+   ============================================================ */
+
+/* ── Hero Search Bar ── */
+.search-container {
+  width: 100%;
+  max-width: 600px;
+  margin: var(--sp-4) auto 0;
+}
+
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  width: 100%;
+  padding: var(--sp-2) var(--sp-3) var(--sp-2) 48px;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  background-color: var(--white);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--dur-base) var(--ease-out), border-color var(--dur-base) var(--ease-out);
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--sage);
+  box-shadow: 0 0 0 3px rgba(168, 184, 154, 0.2);
+}
+
+.search-icon {
+  position: absolute;
+  left: 16px;
+  color: var(--color-text-soft);
+  width: 20px;
+  height: 20px;
+}
+
+.search-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--sp-1);
+  margin-top: var(--sp-3);
+}
+
+.search-pill {
+  font-size: var(--text-xs);
+  padding: 6px 12px;
+  background-color: var(--white);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-xl);
+  color: var(--color-text-sub);
+  cursor: pointer;
+  transition: all var(--dur-fast) var(--ease-out);
+}
+
+.search-pill:hover {
+  background-color: var(--sage-soft);
+  color: var(--charcoal);
+  border-color: var(--sage-light);
+}
+
+/* ── Grids ── */
+.resource-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-4);
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .resource-grid { grid-template-columns: repeat(2, 1fr); }
+  .resource-grid--3 { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .resource-grid--3 { grid-template-columns: repeat(3, 1fr); }
+  .resource-grid--4 { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* ── Base Cards ── */
+.res-card {
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-4);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border-light);
+  transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out);
+  display: flex;
+  flex-direction: column;
+}
+
+.res-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+
+.res-card__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  color: var(--charcoal);
+  margin-bottom: var(--sp-1);
+}
+
+.res-card__desc {
+  color: var(--color-text-sub);
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+  margin-bottom: var(--sp-3);
+  flex-grow: 1;
+}
+
+.res-card__link {
+  font-weight: 500;
+  color: var(--sage);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+.res-card__link:hover { color: var(--olive); }
+.res-card__link svg { width: 16px; height: 16px; transition: transform var(--dur-fast) var(--ease-out); }
+.res-card__link:hover svg { transform: translateX(4px); }
+
+/* ── Accordion (Toolkit) ── */
+.accordion {
+  background-color: var(--white);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--sp-2);
+  border: 1px solid var(--color-border-light);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.accordion__header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--sp-3) var(--sp-4);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--charcoal);
+  text-align: left;
+}
+
+.accordion__icon {
+  width: 20px;
+  height: 20px;
+  color: var(--sage);
+  transition: transform var(--dur-base) var(--ease-out);
+}
+
+.accordion.is-open .accordion__icon {
+  transform: rotate(180deg);
+}
+
+.accordion__content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: var(--beige);
+}
+
+.accordion__inner {
+  padding: 0 var(--sp-4) var(--sp-4);
+  color: var(--color-text-sub);
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+}
+
+.accordion__inner ol, .accordion__inner ul { margin-left: var(--sp-3); margin-top: var(--sp-2); }
+.accordion__inner li { margin-bottom: var(--sp-1); }
+
+/* ── Myth vs Fact (Flip Cards) ── */
+.flip-card {
+  background-color: transparent;
+  perspective: 1000px;
+  height: 220px;
+}
+
+.flip-card__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.flip-card:hover .flip-card__inner,
+.flip-card.is-flipped .flip-card__inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card__front, .flip-card__back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: var(--radius-lg);
+  padding: var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.flip-card__front {
+  background-color: var(--white);
+  border: 1px solid var(--color-border-light);
+  color: var(--charcoal);
+}
+
+.flip-card__back {
+  background-color: var(--sage-soft);
+  color: var(--charcoal);
+  transform: rotateY(180deg);
+}
+
+.flip-label {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  font-weight: 700;
+  color: var(--sage);
+  margin-bottom: var(--sp-2);
+}
+.flip-card__back .flip-label { color: var(--olive-dark); }
+
+.flip-text {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  line-height: var(--leading-snug);
+}
+
+/* ── Mood Tracker Form ── */
+.tracker-form {
+  background-color: var(--white);
+  border-radius: var(--radius-xl);
+  padding: var(--sp-5);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border-light);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: var(--sp-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.form-label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--charcoal);
+}
+
+.form-input, .form-select, .form-textarea {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  padding: var(--sp-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--beige);
+  transition: border-color var(--dur-fast);
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  outline: none;
+  border-color: var(--sage);
+  background-color: var(--white);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.tracker-success {
+  display: none;
+  background-color: var(--sage-soft);
+  color: var(--olive-dark);
+  padding: var(--sp-3);
+  border-radius: var(--radius-sm);
+  text-align: center;
+  font-weight: 500;
+  margin-top: var(--sp-3);
+}
+
+/* ── Daily Wellness Tip ── */
+.daily-tip-card {
+  background: linear-gradient(135deg, var(--beige) 0%, var(--sage-soft) 100%);
+  border-radius: var(--radius-xl);
+  padding: var(--sp-6);
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.daily-tip-card::before {
+  content: '"';
+  position: absolute;
+  top: -20px;
+  left: 20px;
+  font-family: var(--font-heading);
+  font-size: 120px;
+  color: var(--white);
+  opacity: 0.5;
+  line-height: 1;
+}
+
+.daily-tip-card__text {
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  color: var(--charcoal);
+  line-height: var(--leading-snug);
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Mini Cards (Checklists) ── */
+.mini-card {
+  background-color: var(--white);
+  border-radius: var(--radius-md);
+  padding: var(--sp-3);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border-light);
+  transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out);
+}
+.mini-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
+
+.mini-card__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--sage-soft);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--olive);
+  flex-shrink: 0;
+}
+
+.mini-card__text {
+  font-weight: 500;
+  color: var(--charcoal);
+  font-size: var(--text-sm);
+}
+
+/* ── Section Title Center ── */
+.section-title-center {
+  text-align: center;
+  margin-bottom: var(--sp-6);
+}
+.section-title-center h2 { margin-bottom: var(--sp-2); }
+.section-title-center p { color: var(--color-text-sub); max-width: 600px; margin: 0 auto; }

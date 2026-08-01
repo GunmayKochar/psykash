@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Psykash — A calming space for psychological wellness, therapy, and personal growth." />
+  <title>Psykash — Psychology & Wellness</title>
+  <link rel="stylesheet" href="index.css" />
+  <link rel="icon" href="assets/images/logo.png" />
+  <style>
+    /* Mobile-only layout fixes for Home Page */
+    @media (max-width: 768px) {
+      /* Reorder Therapy Helps section: Text -> Image */
+      #therapy-helps .split-screen {
+        flex-direction: column-reverse !important;
+      }
+      
+      /* Spacing between text and image in hero (24-32px) */
+      #home .split-screen {
+        gap: var(--sp-6) !important;
+      }
+      
+      /* Center all text in Hero and Therapy Helps */
+      #home .split-screen__content, 
+      #therapy-helps .split-screen__content {
+        align-items: center !important;
+        text-align: center !important;
+      }
+      
+      #home .split-screen__content *,
+      #therapy-helps .split-screen__content * {
+        text-align: center !important;
+      }
+      
+      /* Ensure text doesn't clip/wrap awkwardly, 100% width, slight line-height increase */
+      #home .hero__description, 
+      #therapy-helps p {
+        width: 100% !important;
+        max-width: 100% !important;
+        line-height: 1.6 !important;
+      }
+      
+      #home .hero__content > img {
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+      
+      /* Scale image to 85-90% width */
+      #home .logo-breeze-wrapper {
+        width: 90% !important;
+        max-width: 320px !important;
+        margin: 0 auto !important;
+      }
+      
+      /* Therapy Girl centering */
+      #therapy-helps .therapy-illustration-wrapper {
+        width: 90% !important;
+        max-width: 340px !important;
+        margin: 0 auto !important;
+      }
+
+      /* Qualifications centering */
+      #home .hero__qualifications {
+        justify-content: center !important;
+      }
+      
+      /* Stats centering */
+      #home .hero__stats {
+        justify-content: center !important;
+        width: 100% !important;
+        gap: var(--sp-4) !important;
+      }
+      
+      /* Badges centering */
+      #home .hero__badges {
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-primary text-slate-800 font-sans antialiased selection:bg-sage/30">
+
+  <!-- PREMIUM SPLASH SCREEN -->
+  <div id="splash-screen" class="splash-screen">
+    <div class="splash-content">
+      <div class="splash-left-60">
+        <img src="assets/images/logo.png" alt="Psykash Logo" class="splash-logo" />
+      </div>
+      <div class="splash-divider"></div>
+      <div class="splash-right-40">
+        <h1 class="splash-heading">YOU'VE BEEN HEARD</h1>
+        <p class="splash-subheading">Let's figure this out together.</p>
+      </div>
+    </div>
+    
+    <div class="splash-loading-bar">
+      <div class="splash-loading-progress"></div>
+    </div>
+    <div class="curtain-line"></div>
+      <div class="mobile-modal-bg">
+          <div class="therapy-illustration-wrapper">
+            <!-- Background Decorations (Orbit lines and Shadow) -->
+            <svg class="therapy-decorations" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <!-- Ground Shadow -->
+              <ellipse class="therapy-svg__shadow" cx="250" cy="460" rx="140" ry="12" fill="rgba(45,45,45,0.08)"/>
+              
+              <!-- Orbit Ribbons -->
+              <path class="therapy-svg__ribbon" d="M 70 250 C 70 120, 430 80, 430 250 C 430 420, 70 420, 70 250 Z" stroke="var(--sage-muted)" stroke-width="1.5" opacity="0.3" fill="none" stroke-linecap="round"/>
+              <path class="therapy-svg__ribbon therapy-svg__ribbon--2" d="M 120 180 C 250 50, 450 350, 200 450 C 50 350, -10 300, 120 180 Z" stroke="var(--sage-soft)" stroke-width="1" opacity="0.4" fill="none" stroke-linecap="round"/>
+            </svg>
+
+            <!-- Floating Image Container -->
+            <div class="therapy-image-floater">
+              <img src="assets/therapy-girl.png.png" alt="Meditating Woman" class="therapy-image" />
+            </div>
+
+            <!-- Foreground Decorations (Leaves) -->
+            <svg class="therapy-decorations-front" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <path id="min-leaf" d="M 0 -8 Q 8 -8 8 0 Q 8 8 0 8 Q -8 8 -8 0 Q -8 -8 0 -8 Z"/>
+                <filter id="leafShadow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+                  <feOffset dx="0" dy="2"/>
+                  <feComponentTransfer><feFuncA type="linear" slope="0.1"/></feComponentTransfer>
+                  <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+              </defs>
+              <g filter="url(#leafShadow)">
+                <g class="therapy-svg__leaf therapy-svg__leaf--1"><use href="#min-leaf" x="100" y="140" fill="var(--sage)"/></g>
+                <g class="therapy-svg__leaf therapy-svg__leaf--2"><use href="#min-leaf" x="420" y="200" fill="var(--sage-light)" transform="scale(0.8)"/></g>
+                <g class="therapy-svg__leaf therapy-svg__leaf--3"><use href="#min-leaf" x="120" y="380" fill="var(--olive)" transform="scale(1.1)"/></g>
+                <g class="therapy-svg__leaf therapy-svg__leaf--4"><use href="#min-leaf" x="400" y="380" fill="var(--sage)"/></g>
+                <g class="therapy-svg__leaf therapy-svg__leaf--5"><use href="#min-leaf" x="380" y="90" fill="var(--olive)" transform="scale(0.9)"/></g>
+              </g>
+            </svg>
+          </div>
+        </div>
+</div>
+
+  <!-- ═══════════════════════════════════════════
+       NAVBAR
+       ═══════════════════════════════════════════ -->
+  <div id="nav-container"></div>
+  <script src="navbar.js"></script>
+
+
+  <!-- ═══════════════════════════════════════════
+       MAIN CONTENT
+       ═══════════════════════════════════════════ -->
+  <main>
+    
+    <!-- ═══════════════════════════════════════════
+         HERO SECTION
+         ═══════════════════════════════════════════ -->
+    <section id="home" class="section hero">
+      <div class="container split-screen hero__container">
+        
+        <!-- Left Side: Text Content -->
+        <div class="split-screen__content hero__content fade-in">
+          <img src="assets/images/logo.png" alt="Psykash Online Therapy Logo" style="height: 24px; width: auto; margin-bottom: var(--sp-2); display: block;" />
+          <span class="label">Welcome to Psykash</span>
+          <h1 class="heading hero__title">Kashish</h1>
+          <h3 class="hero__subtitle">Mental Health Educator & Psychology Practitioner</h3>
+          <div class="hero__qualifications">
+            <span class="hero__qual">BA in English Honours with Psychology</span>
+            <span class="hero__qual-dot">•</span>
+            <span class="hero__qual">MA in Psychology</span>
+          </div>
+          
+          <p class="hero__description">
+            I help individuals navigate anxiety, stress, relationships, emotional well-being, and personal growth. My goal is to provide a compassionate, safe, and evidence-based space where we can work together to uncover your resilience and lead you toward a more fulfilling, balanced life.
+          </p>
+          
+
+          <div class="hero__stats">
+            <div class="stat-card">
+              <span class="stat-card__number" data-target="100+">0+</span>
+              <span class="stat-card__label">Clients Helped</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-card__number" data-target="200+">0+</span>
+              <span class="stat-card__label">Sessions Conducted</span>
+            </div>
+          </div>
+
+          <div class="hero__badges">
+            <span class="badge">Anxiety</span>
+            <span class="badge">Stress</span>
+            <span class="badge">Depression</span>
+            <span class="badge">Relationships</span>
+            <span class="badge">Self-Esteem</span>
+            <span class="badge">Emotional Well-being</span>
+          </div>
+        </div>
+
+        <!-- Right Side: Portrait -->
+        <div class="split-screen__image fade-in" style="--delay: 200ms; display: flex; justify-content: center; align-items: center; padding: var(--sp-4); align-self: center;">
+          <div class="logo-breeze-wrapper">
+            <div class="hero-logo-breathe-container">
+              <img src="assets/images/main.png" alt="Kashish Portrait" class="hero-logo-breathe" style="width: 100%; max-width: 440px; aspect-ratio: 4/5; object-fit: cover; border-radius: 32px; box-shadow: var(--shadow-lg);" />
+            </div>
+            <div class="breeze-leaf breeze-leaf-1"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M21,3 C21,3 13,2 8,7 C3,12 2,21 2,21 C2,21 11,22 16,17 C21,12 21,3 21,3 Z" /></svg></div>
+            <div class="breeze-leaf breeze-leaf-2"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M21,3 C21,3 13,2 8,7 C3,12 2,21 2,21 C2,21 11,22 16,17 C21,12 21,3 21,3 Z" /></svg></div>
+            <div class="breeze-leaf breeze-leaf-3"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M21,3 C21,3 13,2 8,7 C3,12 2,21 2,21 C2,21 11,22 16,17 C21,12 21,3 21,3 Z" /></svg></div>
+            <div class="breeze-leaf breeze-leaf-4"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M21,3 C21,3 13,2 8,7 C3,12 2,21 2,21 C2,21 11,22 16,17 C21,12 21,3 21,3 Z" /></svg></div>
+            <div class="breeze-leaf breeze-leaf-5"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M21,3 C21,3 13,2 8,7 C3,12 2,21 2,21 C2,21 11,22 16,17 C21,12 21,3 21,3 Z" /></svg></div>
+            <div class="breeze-leaf breeze-leaf-6"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M21,3 C21,3 13,2 8,7 C3,12 2,21 2,21 C2,21 11,22 16,17 C21,12 21,3 21,3 Z" /></svg></div>
+            <div class="breeze-leaf breeze-leaf-7"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M21,3 C21,3 13,2 8,7 C3,12 2,21 2,21 C2,21 11,22 16,17 C21,12 21,3 21,3 Z" /></svg></div>
+            <div class="breeze-leaf breeze-leaf-8"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M21,3 C21,3 13,2 8,7 C3,12 2,21 2,21 C2,21 11,22 16,17 C21,12 21,3 21,3 Z" /></svg></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 2 – HOW THERAPY HELPS
+         ═══════════════════════════════════════════ -->
+    <section id="therapy-helps" class="section bg-warm">
+      <div class="container split-screen">
+        
+        <!-- Left Side: Illustration -->
+        <div class="split-screen__image fade-in">
+          <div class="therapy-illustration-wrapper">
+            <!-- Background Decorations (Orbit lines and Shadow) -->
+            <svg class="therapy-decorations" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <!-- Ground Shadow -->
+              <ellipse class="therapy-svg__shadow" cx="250" cy="460" rx="140" ry="12" fill="rgba(45,45,45,0.08)"/>
+              
+              <!-- Orbit Ribbons -->
+              <path class="therapy-svg__ribbon" d="M 70 250 C 70 120, 430 80, 430 250 C 430 420, 70 420, 70 250 Z" stroke="var(--sage-muted)" stroke-width="1.5" opacity="0.3" fill="none" stroke-linecap="round"/>
+              <path class="therapy-svg__ribbon therapy-svg__ribbon--2" d="M 120 180 C 250 50, 450 350, 200 450 C 50 350, -10 300, 120 180 Z" stroke="var(--sage-soft)" stroke-width="1" opacity="0.4" fill="none" stroke-linecap="round"/>
+            </svg>
+
+            <!-- Floating Image Container -->
+            <div class="therapy-image-floater">
+              <img src="assets/therapy-girl.png.png" alt="Meditating Woman" class="therapy-image" />
+            </div>
+
+            <!-- Foreground Decorations (Leaves) -->
+            <svg class="therapy-decorations-front" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <!-- Minimal Leaf Shape -->
+                <path id="min-leaf" d="M 0 -8 Q 8 -8 8 0 Q 8 8 0 8 Q -8 8 -8 0 Q -8 -8 0 -8 Z"/>
+                <filter id="leafShadow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+                  <feOffset dx="0" dy="2"/>
+                  <feComponentTransfer><feFuncA type="linear" slope="0.1"/></feComponentTransfer>
+                  <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+              </defs>
+
+              <g filter="url(#leafShadow)">
+                <g class="therapy-svg__leaf therapy-svg__leaf--1">
+                  <use href="#min-leaf" x="100" y="140" fill="var(--sage)"/>
+                </g>
+                <g class="therapy-svg__leaf therapy-svg__leaf--2">
+                  <use href="#min-leaf" x="420" y="200" fill="var(--sage-light)" transform="scale(0.8)"/>
+                </g>
+                <g class="therapy-svg__leaf therapy-svg__leaf--3">
+                  <use href="#min-leaf" x="120" y="380" fill="var(--olive)" transform="scale(1.1)"/>
+                </g>
+                <g class="therapy-svg__leaf therapy-svg__leaf--4">
+                  <use href="#min-leaf" x="400" y="380" fill="var(--sage)"/>
+                </g>
+                <g class="therapy-svg__leaf therapy-svg__leaf--5">
+                  <use href="#min-leaf" x="380" y="90" fill="var(--olive)" transform="scale(0.9)"/>
+                </g>
+                <!-- Two additional leaves as requested -->
+                <g class="therapy-svg__leaf therapy-svg__leaf--6">
+                  <use href="#min-leaf" x="60" y="260" fill="var(--sage-light)" transform="scale(1.2)"/>
+                </g>
+                <g class="therapy-svg__leaf therapy-svg__leaf--7">
+                  <use href="#min-leaf" x="440" y="300" fill="var(--sage-muted)" transform="scale(0.7)"/>
+                </g>
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Right Side: Text Content -->
+        <div class="split-screen__content slide-in-right">
+          <span class="label">Your Mental Health Matters</span>
+          <h2 class="heading" style="margin-top: var(--sp-2); margin-bottom: var(--sp-3);">How Therapy Helps</h2>
+          <p style="margin-bottom: var(--sp-5);">
+            Therapy provides a safe, confidential space to understand your emotions and overcome challenges. It is a collaborative journey where you can develop healthier coping strategies, build emotional resilience, and discover the tools you need to lead a more balanced and fulfilling life.
+          </p>
+          <button id="btnGetStartedModal" class="btn btn--primary">
+            Get Started
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+  <!-- ═══════════════════════════════════════════
+       MYTHS VS FACTS
+       ═══════════════════════════════════════════ -->
+  <section class="section" style="overflow: hidden;">
+    <div class="container fade-in" style="text-align: center; margin-bottom: var(--sp-12);">
+      <h2 class="heading" style="margin-bottom: var(--sp-4);">Mental Health Myths vs Facts</h2>
+      <p style="max-width: 600px; margin: 0 auto; color: var(--color-text-sub); font-size: var(--text-lg);">
+        Let's separate common misconceptions from evidence-based psychological understanding.
+      </p>
+    </div>
+
+    <div class="testimonial-wall fade-in" style="--delay: 100ms;">
+      <div class="testimonial-wall-fade left"></div>
+      <div class="testimonial-wall-fade right"></div>
+
+      <!-- Single Continuous Row -->
+      <div class="testimonial-track track-left speed-slow">
+        <div class="track-group">
+
+        <div class="card myth-fact-card">
+          <div class="myth-fact-top">
+            <span class="myth-pill"><span aria-hidden="true">❌</span> MYTH</span>
+            <p class="myth-text">"Therapy is only for people with serious mental illness."</p>
+          </div>
+          <div class="myth-fact-bottom">
+            <span class="fact-pill"><span aria-hidden="true">✅</span> FACT</span>
+            <p class="fact-text">"Therapy can help anyone improve emotional wellbeing, navigate life transitions, and develop better coping skills."</p>
+          </div>
+        </div>
+        <div class="card myth-fact-card">
+          <div class="myth-fact-top">
+            <span class="myth-pill"><span aria-hidden="true">❌</span> MYTH</span>
+            <p class="myth-text">"Anxiety is just a sign that you are not strong enough."</p>
+          </div>
+          <div class="myth-fact-bottom">
+            <span class="fact-pill"><span aria-hidden="true">✅</span> FACT</span>
+            <p class="fact-text">"Anxiety is a natural human response to stress. Managing it is about building resilience, not proving your strength."</p>
+          </div>
+        </div>
+        <div class="card myth-fact-card">
+          <div class="myth-fact-top">
+            <span class="myth-pill"><span aria-hidden="true">❌</span> MYTH</span>
+            <p class="myth-text">"Depression is just feeling sad; you can snap out of it if you try."</p>
+          </div>
+          <div class="myth-fact-bottom">
+            <span class="fact-pill"><span aria-hidden="true">✅</span> FACT</span>
+            <p class="fact-text">"Depression is a complex medical condition that affects mood, energy, and cognition. It often requires professional support to manage."</p>
+          </div>
+        </div>
+        <div class="card myth-fact-card">
+          <div class="myth-fact-top">
+            <span class="myth-pill"><span aria-hidden="true">❌</span> MYTH</span>
+            <p class="myth-text">"Stress is just part of life, so there's nothing you can do about it."</p>
+          </div>
+          <div class="myth-fact-bottom">
+            <span class="fact-pill"><span aria-hidden="true">✅</span> FACT</span>
+            <p class="fact-text">"While some stress is inevitable, healthy coping strategies can significantly reduce its impact on your daily life."</p>
+          </div>
+        </div>
+        <div class="card myth-fact-card">
+          <div class="myth-fact-top">
+            <span class="myth-pill"><span aria-hidden="true">❌</span> MYTH</span>
+            <p class="myth-text">"You can train your body to function perfectly on just 4 hours of sleep."</p>
+          </div>
+          <div class="myth-fact-bottom">
+            <span class="fact-pill"><span aria-hidden="true">✅</span> FACT</span>
+            <p class="fact-text">"Consistent lack of sleep negatively impacts cognitive function and emotional regulation. Most adults need 7-9 hours for optimal health."</p>
+          </div>
+        </div>
+        <div class="card myth-fact-card">
+          <div class="myth-fact-top">
+            <span class="myth-pill"><span aria-hidden="true">❌</span> MYTH</span>
+            <p class="myth-text">"Overthinking is just overreacting and you should just stop it."</p>
+          </div>
+          <div class="myth-fact-bottom">
+            <span class="fact-pill"><span aria-hidden="true">✅</span> FACT</span>
+            <p class="fact-text">"Persistent overthinking is a common anxiety symptom. Practical techniques can help you gently redirect your thoughts."</p>
+          </div>
+        </div>
+        <div class="card myth-fact-card">
+          <div class="myth-fact-top">
+            <span class="myth-pill"><span aria-hidden="true">❌</span> MYTH</span>
+            <p class="myth-text">"Confidence is an inherent trait; you either have it or you don't."</p>
+          </div>
+          <div class="myth-fact-bottom">
+            <span class="fact-pill"><span aria-hidden="true">✅</span> FACT</span>
+            <p class="fact-text">"Self-confidence is a skill that can be built over time by challenging self-doubt and recognizing your achievements."</p>
+          </div>
+        </div>
+        <div class="card myth-fact-card">
+          <div class="myth-fact-top">
+            <span class="myth-pill"><span aria-hidden="true">❌</span> MYTH</span>
+            <p class="myth-text">"Setting boundaries means you don't care about the other person."</p>
+          </div>
+          <div class="myth-fact-bottom">
+            <span class="fact-pill"><span aria-hidden="true">✅</span> FACT</span>
+            <p class="fact-text">"Boundaries actually protect relationships by ensuring mutual respect and preventing long-term resentment."</p>
+          </div>
+        </div>
+        <div class="card myth-fact-card">
+          <div class="myth-fact-top">
+            <span class="myth-pill"><span aria-hidden="true">❌</span> MYTH</span>
+            <p class="myth-text">"Burnout just means you need a vacation or a weekend off."</p>
+          </div>
+          <div class="myth-fact-bottom">
+            <span class="fact-pill"><span aria-hidden="true">✅</span> FACT</span>
+            <p class="fact-text">"Burnout is chronic workplace stress that has not been successfully managed. It requires structural changes to your routine, not just a break."</p>
+          </div>
+        </div>
+        <div class="card myth-fact-card">
+          <div class="myth-fact-top">
+            <span class="myth-pill"><span aria-hidden="true">❌</span> MYTH</span>
+            <p class="myth-text">"Talking about your emotions makes you weak or a burden to others."</p>
+          </div>
+          <div class="myth-fact-bottom">
+            <span class="fact-pill"><span aria-hidden="true">✅</span> FACT</span>
+            <p class="fact-text">"Understanding and expressing your emotions is a fundamental part of building emotional intelligence and strong connections."</p>
+          </div>
+        </div>
+        <div class="card myth-fact-card">
+          <div class="myth-fact-top">
+            <span class="myth-pill"><span aria-hidden="true">❌</span> MYTH</span>
+            <p class="myth-text">"If I'm struggling, I should be able to figure it out and fix it myself."</p>
+          </div>
+          <div class="myth-fact-bottom">
+            <span class="fact-pill"><span aria-hidden="true">✅</span> FACT</span>
+            <p class="fact-text">"Seeking support is a courageous and healthy step. We are not meant to navigate every challenge completely alone."</p>
+          </div>
+        </div>
+        <div class="card myth-fact-card">
+          <div class="myth-fact-top">
+            <span class="myth-pill"><span aria-hidden="true">❌</span> MYTH</span>
+            <p class="myth-text">"Mental health problems always look obvious from the outside."</p>
+          </div>
+          <div class="myth-fact-bottom">
+            <span class="fact-pill"><span aria-hidden="true">✅</span> FACT</span>
+            <p class="fact-text">"Many people appear perfectly fine and high-functioning externally while silently struggling internally."</p>
+          </div>
+        </div>
+        </div>
+        <div class="track-group" aria-hidden="true">
+
+        <div class="card myth-fact-card">
+          <div class="myth-fact-top">
+            <span class="myth-pill"><span aria-hidden="true">❌</span> MYTH</span>
+            <p class="myth-text">"Therapy is only for people with serious mental illness."</p>
+          </div>
+          <div class="myth-fact-bottom">
+            <span class="fact-pill"><span aria-hidden="true">✅</span> FACT</span>
+            <p class="fact-text">"Therapy can help anyone improve emotional wellbeing, navigate life transitions, and develop better coping skills."</p>
+          </div>
+        </div>
+        <div class="card myth-fact-card">
+          <div class="myth-fact-top">
+            <span class="myth-pill"><span aria-hidden="true">❌</span> MYTH</span>
+            <p class="myth-text">"Anxiety is just a sign that you are not strong enough."</p>
+          </div>
+          <div class="myth-fact-bottom">
+            <span class="fact-pill"><span aria-hidden="true">✅</span> FACT</span>
+            <p class="fact-text">"Anxiety is a natural human response to stress. Managing it is about building resilience, not proving your strength."</p>
+          </div>
+        </div>
+        <div class="card myth-fact-card">
+          <div class="myth-fact-top">
+            <span class="myth-pill"><span aria-hidden="true">❌</span> MYTH</span>
+            <p class="myth-text">"Depression is just feeling sad; you can snap out of it if you try."</p>
+          </div>
+          <div class="myth-fact-bottom">
+            <span class="fact-pill"><span aria-hidden="true">✅</span> FACT</span>
+            <p class="fact-text">"Depression is a complex medical condition that affects mood, energy, and cognition. It often requires professional support to manage."</p>
+          </div>
+        </div>
+        <div class="card myth-fact-card">
+          <div class="myth-fact-top">
+            <span class="myth-pill"><span aria-hidden="true">❌</span> MYTH</span>
+            <p class="myth-text">"Stress is just part of life, so there's nothing you can do about it."</p>
+          </div>
+          <div class="myth-fact-bottom">
+            <span class="fact-pill"><span aria-hidden="true">✅</span> FACT</span>
+            <p class="fact-text">"While some stress is inevitable, healthy coping strategies can significantly reduce its impact on your daily life."</p>
+          </div>
+        </div>
+        <div class="card myth-fact-card">
+          <div class="myth-fact-top">
+            <span class="myth-pill"><span aria-hidden="true">❌</span> MYTH</span>
+            <p class="myth-text">"You can train your body to function perfectly on just 4 hours of sleep."</p>
+          </div>
+          <div class="myth-fact-bottom">
+            <span class="fact-pill"><span aria-hidden="true">✅</span> FACT</span>
+            <p class="fact-text">"Consistent lack of sleep negatively impacts cognitive function and emotional regulation. Most adults need 7-9 hours for optimal health."</p>
+          </div>
+        </div>
+        <div class="card myth-fact-card">
+          <div class="myth-fact-top">
+            <span class="myth-pill"><span aria-hidden="true">❌</span> MYTH</span>
+            <p class="myth-text">"Overthinking is just overreacting and you should just stop it."</p>
+          </div>
+          <div class="myth-fact-bottom">
+            <span class="fact-pill"><span aria-hidden="true">✅</span> FACT</span>
+            <p class="fact-text">"Persistent overthinking is a common anxiety symptom. Practical techniques can help you gently redirect your thoughts."</p>
+          </div>
+        </div>
+        <div class="card myth-fact-card">
+          <div class="myth-fact-top">
+            <span class="myth-pill"><span aria-hidden="true">❌</span> MYTH</span>
+            <p class="myth-text">"Confidence is an inherent trait; you either have it or you don't."</p>
+          </div>
+          <div class="myth-fact-bottom">
+            <span class="fact-pill"><span aria-hidden="true">✅</span> FACT</span>
+            <p class="fact-text">"Self-confidence is a skill that can be built over time by challenging self-doubt and recognizing your achievements."</p>
+          </div>
+        </div>
+        <div class="card myth-fact-card">
+          <div class="myth-fact-top">
+            <span class="myth-pill"><span aria-hidden="true">❌</span> MYTH</span>
+            <p class="myth-text">"Setting boundaries means you don't care about the other person."</p>
+          </div>
+          <div class="myth-fact-bottom">
+            <span class="fact-pill"><span aria-hidden="true">✅</span> FACT</span>
+            <p class="fact-text">"Boundaries actually protect relationships by ensuring mutual respect and preventing long-term resentment."</p>
+          </div>
+        </div>
+        <div class="card myth-fact-card">
+          <div class="myth-fact-top">
+            <span class="myth-pill"><span aria-hidden="true">❌</span> MYTH</span>
+            <p class="myth-text">"Burnout just means you need a vacation or a weekend off."</p>
+          </div>
+          <div class="myth-fact-bottom">
+            <span class="fact-pill"><span aria-hidden="true">✅</span> FACT</span>
+            <p class="fact-text">"Burnout is chronic workplace stress that has not been successfully managed. It requires structural changes to your routine, not just a break."</p>
+          </div>
+        </div>
+        <div class="card myth-fact-card">
+          <div class="myth-fact-top">
+            <span class="myth-pill"><span aria-hidden="true">❌</span> MYTH</span>
+            <p class="myth-text">"Talking about your emotions makes you weak or a burden to others."</p>
+          </div>
+          <div class="myth-fact-bottom">
+            <span class="fact-pill"><span aria-hidden="true">✅</span> FACT</span>
+            <p class="fact-text">"Understanding and expressing your emotions is a fundamental part of building emotional intelligence and strong connections."</p>
+          </div>
+        </div>
+        <div class="card myth-fact-card">
+          <div class="myth-fact-top">
+            <span class="myth-pill"><span aria-hidden="true">❌</span> MYTH</span>
+            <p class="myth-text">"If I'm struggling, I should be able to figure it out and fix it myself."</p>
+          </div>
+          <div class="myth-fact-bottom">
+            <span class="fact-pill"><span aria-hidden="true">✅</span> FACT</span>
+            <p class="fact-text">"Seeking support is a courageous and healthy step. We are not meant to navigate every challenge completely alone."</p>
+          </div>
+        </div>
+        <div class="card myth-fact-card">
+          <div class="myth-fact-top">
+            <span class="myth-pill"><span aria-hidden="true">❌</span> MYTH</span>
+            <p class="myth-text">"Mental health problems always look obvious from the outside."</p>
+          </div>
+          <div class="myth-fact-bottom">
+            <span class="fact-pill"><span aria-hidden="true">✅</span> FACT</span>
+            <p class="fact-text">"Many people appear perfectly fine and high-functioning externally while silently struggling internally."</p>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       GET STARTED MODAL
+       ═══════════════════════════════════════════ -->
+      <div id="getStartedModal" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <!-- DESKTOP MODAL -->
+      <div class="modal-container desktop-modal">
+        <button class="modal-close" id="btnModalClose" aria-label="Close modal">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        
+        <div class="modal-header">
+          <h2 id="modalTitle" class="modal-title">How would you like to begin?</h2>
+          <p class="modal-subtitle">Whether you're looking for immediate self-help tools or professional guidance, choose the path that's right for you.</p>
+        </div>
+  
+        <div class="modal-grid">
+          <!-- Self Help Option -->
+          <a href="self-help.html" class="card modal-option-card">
+            <div class="modal-option-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+            </div>
+            <h3 class="modal-option-title">Self Help</h3>
+            <p class="modal-option-desc">Explore evidence-informed guides, practical exercises, and mental wellness tools at your own pace.</p>
+            <span class="btn btn--secondary modal-option-btn">Explore Self Help</span>
+          </a>
+  
+          <!-- Book Appointment Option -->
+          <a href="contact.html" class="card modal-option-card" id="btnModalContact">
+            <div class="modal-option-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
+            </div>
+            <h3 class="modal-option-title">Book an Appointment</h3>
+            <p class="modal-option-desc">Connect with Kashish for personalized online therapy and professional guidance.</p>
+            <span class="btn btn--secondary modal-option-btn">Book Appointment</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- MOBILE MODAL REDESIGN -->
+      <div class="modal-container mobile-modal">
+        <!-- Floating Meditation Illustration Background -->
+        <div class="mobile-modal-header" style="position: relative; z-index: 10;">
+          <h2 class="mobile-modal-title">Choose Your Path</h2>
+          <p class="mobile-modal-subtitle">Whether you're looking for immediate self-help tools or professional guidance, choose the option that's right for you.</p>
+        </div>
+
+        <div class="mobile-modal-grid" style="position: relative; z-index: 10;">
+          <!-- Explore Self Help -->
+          <a href="self-help.html" class="mobile-modal-card">
+            <div class="mobile-modal-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+            </div>
+            <h3 class="mobile-modal-title-small">Explore Self Help</h3>
+            <p class="mobile-modal-desc">Evidence-based guides and practical exercises you can start immediately.</p>
+            <div class="mobile-modal-btn">Explore &rarr;</div>
+          </a>
+
+          <!-- Book Appointment -->
+          <a href="contact.html" class="mobile-modal-card">
+            <div class="mobile-modal-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
+            </div>
+            <h3 class="mobile-modal-title-small">Book Appointment</h3>
+            <p class="mobile-modal-desc">Schedule a one-on-one session with Kashish.</p>
+            <div class="mobile-modal-btn">Book &rarr;</div>
+          </a>
+        </div>
+
+        <button class="mobile-modal-back btn btn--outline" id="btnMobileGoBack" aria-label="Go Back"  style="position: relative; z-index: 10;">
+          &larr; Go Back
+        </button>
+      
+        
+
+        </div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container" style="text-align: center; padding: var(--sp-8) 0; display: flex; flex-direction: column; align-items: center; gap: var(--sp-4);">
+      <img src="assets/images/logo.png" alt="Psykash Online Therapy Logo" style="height: 40px; width: auto; opacity: 0.8;" />
+      <p style="color: var(--color-text-soft); font-size: 0.875rem; margin: 0;">&copy; 2026 Psykash. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
