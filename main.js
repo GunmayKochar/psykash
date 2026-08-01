@@ -42,10 +42,39 @@
       // Remove immediately without playing
       splashScreen.remove();
       setTimeout(() => document.dispatchEvent(new CustomEvent('psykash-splash-complete')), 50);
+      
+      // Page Transition Slide-In (Desktop)
+      if (window.innerWidth > 768 && navType !== 'back_forward') { window.scrollTo(0, 0);
+        document.documentElement.classList.add('is-animating');
+        const dir = sessionStorage.getItem('psykash_nav_dir') || 'right';
+        const inCls = dir === 'left' ? 'page-slide-in-left' : 'page-slide-in-right';
+        const mainEl = document.querySelector('main');
+        if(mainEl) mainEl.classList.add(inCls); else document.body.classList.add(inCls);
+        setTimeout(() => {
+          document.documentElement.classList.remove('is-animating');
+          const mainEl = document.querySelector('main');
+          if(mainEl) mainEl.classList.remove(inCls); else document.body.classList.remove(inCls);
+        }, 450);
+      }
     }
   } else {
     // If no splash screen exists on this page
     setTimeout(() => document.dispatchEvent(new CustomEvent('psykash-splash-complete')), 50);
+    
+    // Page Transition Slide-In (Desktop)
+    const isInternalNavFallback = sessionStorage.getItem('psykash_internal_nav') === 'true';
+    if (window.innerWidth > 768 && isInternalNavFallback) { window.scrollTo(0, 0);
+      document.documentElement.classList.add('is-animating');
+      const dir = sessionStorage.getItem('psykash_nav_dir') || 'right';
+        const inCls = dir === 'left' ? 'page-slide-in-left' : 'page-slide-in-right';
+        const mainEl = document.querySelector('main');
+        if(mainEl) mainEl.classList.add(inCls); else document.body.classList.add(inCls);
+        setTimeout(() => {
+          document.documentElement.classList.remove('is-animating');
+          const mainEl = document.querySelector('main');
+          if(mainEl) mainEl.classList.remove(inCls); else document.body.classList.remove(inCls);
+        }, 450);
+    }
   }
 
   // Global click listener to track internal navigation
@@ -58,6 +87,33 @@
           // Only flag if navigating to a different page within the site
           if (url.pathname !== window.location.pathname) {
              sessionStorage.setItem('psykash_internal_nav', 'true');
+             
+             // Page Transition Slide-Out (Desktop)
+             if (window.innerWidth > 768 && (!link.target || link.target !== '_blank')) {
+               // Ensure it's not a hash link on the same page
+               if (!link.hash || link.pathname !== window.location.pathname) {
+                 e.preventDefault();
+                 document.documentElement.classList.add('is-animating');
+                 function getIdx(p) {
+                     if (p.includes('about')) return 1;
+                     if (p.includes('self-help') || p.includes('/resources/')) return 2;
+                     if (p.includes('faq')) return 3;
+                     if (p.includes('contact')) return 4;
+                     return 0; // home
+                   }
+                   const currentIdx = getIdx(window.location.pathname);
+                   const targetIdx = getIdx(link.pathname);
+                   const dir = targetIdx < currentIdx ? 'left' : 'right';
+                   sessionStorage.setItem('psykash_nav_dir', dir);
+                   
+                   const outCls = dir === 'left' ? 'page-slide-out-right' : 'page-slide-out-left';
+                   const mainEl = document.querySelector('main');
+                   if(mainEl) mainEl.classList.add(outCls); else document.body.classList.add(outCls);
+                 setTimeout(() => {
+                   window.location.href = link.href;
+                 }, 350);
+               }
+             }
           }
         }
       } catch (err) {}
