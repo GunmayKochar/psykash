@@ -2757,37 +2757,21 @@ main {
     overflow-y: scroll !important;
   }
 
-  main.page-slide-out-left, body.page-slide-out-left {
+  main.page-fade-out, body.page-fade-out {
     will-change: transform, opacity;
-    animation: slideOutLeft 0.35s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation: fadeOutSmooth 0.2s ease-out forwards;
   }
-  main.page-slide-in-right, body.page-slide-in-right {
+  main.page-fade-in-up, body.page-fade-in-up {
     will-change: transform, opacity;
-    animation: slideInRight 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-  }
-  main.page-slide-out-right, body.page-slide-out-right {
-    will-change: transform, opacity;
-    animation: slideOutRight 0.35s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-  }
-  main.page-slide-in-left, body.page-slide-in-left {
-    will-change: transform, opacity;
-    animation: slideInLeft 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation: fadeInUpSmooth 0.2s ease-out forwards;
   }
   
-  @keyframes slideOutLeft {
-    0% { transform: translate3d(0, 0, 0); opacity: 1; }
-    100% { transform: translate3d(-60px, 0, 0); opacity: 0; }
+  @keyframes fadeOutSmooth {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
   }
-  @keyframes slideInRight {
-    0% { transform: translate3d(60px, 0, 0); opacity: 0; }
-    100% { transform: translate3d(0, 0, 0); opacity: 1; }
-  }
-  @keyframes slideOutRight {
-    0% { transform: translate3d(0, 0, 0); opacity: 1; }
-    100% { transform: translate3d(60px, 0, 0); opacity: 0; }
-  }
-  @keyframes slideInLeft {
-    0% { transform: translate3d(-60px, 0, 0); opacity: 0; }
+  @keyframes fadeInUpSmooth {
+    0% { transform: translate3d(0, 12px, 0); opacity: 0; }
     100% { transform: translate3d(0, 0, 0); opacity: 1; }
   }
 
